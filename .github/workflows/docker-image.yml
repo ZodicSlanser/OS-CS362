@@ -19,7 +19,7 @@ jobs:
         run: docker login --username ${{ secrets.DOCKERAUN }}  --password ${{ secrets.DOCKERAT }}
 
       - name: "Image building"
-        run: docker build -t zodicslanser/javaimageTest .
+        run: docker build -t ${{ secrets.DOCKERAUN }} /javaimagetest .
 
       - name: "Image Pushing"
-        run: docker push zodicslanser/javaimageTest
+        run: docker push ${{ secrets.DOCKERAUN }} /javaimagetest
