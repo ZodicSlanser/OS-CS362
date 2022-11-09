@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v3
+
+      - name: "Login to DockerHub"
+        run: docker login --username ${{ secrets.DOCKERAUN }}  --password ${{ secrets.DOCKERAT }}
+
+      - name: "Image building"
+        run: docker build -t ${{ secrets.DOCKERAUN }}/javaimageTest .
+
+      - name: "Image Pushing"
+        run: docker push ${{ secrets.DOCKERAUN }}/javaimageTest
