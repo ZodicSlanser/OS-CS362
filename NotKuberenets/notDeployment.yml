@@ -1,0 +1,25 @@
+apiVersion : apps/v1
+kind : Deployment
+metadata :
+  name : dep
+
+spec : 
+  selector : 
+    matchLabels : 
+      labelname : testlabels
+  replicas : 3
+  template :
+    metadata :
+      name : pod1
+      labels :
+        labelname : testlabels
+    spec :
+      containers :
+        - image : nginx:alpine
+          name : img1
+          resources :
+            limits :
+              memory : "512Mi"
+              cpu : "1"
+  
+      

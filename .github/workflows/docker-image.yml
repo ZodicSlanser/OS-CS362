@@ -19,7 +19,9 @@ jobs:
         run: docker login --username ${{ secrets.DOCKERAUN }}  --password ${{ secrets.DOCKERAT }}
 
       - name: "Image building"
-        run: docker build -t ${{ secrets.DOCKERAUN }}/javaimagetest .
+        run: docker build -t ${{ secrets.DOCKERAUN }}/simpleserver .
 
       - name: "Image Pushing"
-        run: docker push ${{ secrets.DOCKERAUN }}/javaimagetest
+        run: docker push ${{ secrets.DOCKERAUN }}/simpleserver
+
+        

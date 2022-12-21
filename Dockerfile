@@ -1,12 +1,6 @@
-FROM openjdk 
+FROM nginx:alpine
+COPY static-html-directory /usr/share/nginx/html
 
-WORKDIR /app
-
-COPY Test.java .
-
-RUN javac Test.java
-
-CMD java Test
 
 
 
