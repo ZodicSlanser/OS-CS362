@@ -1,5 +1,5 @@
 FROM nginx:alpine
-COPY static-html-directory /usr/share/nginx/html
+COPY webapp.html /usr/share/nginx/html
 
 
 
