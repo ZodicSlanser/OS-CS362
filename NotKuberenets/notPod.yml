@@ -4,12 +4,11 @@ metadata :
   name : pod1
 spec :
   containers :
-    - image : nginx:alpine
+    - image : zodicslanser/simpleserver
       name : img1
+      ports:
+        - containerPort: 80
       resources :
          limits :
            memory : "512Mi"
-           cpu : "1"
-  
-
-    
+           cpu : "1"    
