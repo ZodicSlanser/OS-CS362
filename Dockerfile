@@ -1,6 +1,8 @@
 FROM nginx:alpine
-COPY webapp.html /usr/share/nginx/html
-
+RUN mkdir /test
+RUN chmod +rwx /test
+COPY nginx.conf /etc/nginx
+COPY webapp.html /test/
 
 
 
